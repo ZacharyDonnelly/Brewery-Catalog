@@ -1,0 +1,29 @@
+@import '../../BaseStyles/colors.scss';
+@import '../../BaseStyles/mixins.scss';
+
+.container {
+  height: 3rem;
+  width: 100%;
+  margin-bottom: 2rem;
+
+  header {
+    position: relative;
+    display: flex;
+    padding: 1rem 2rem 1rem 0rem;
+    transition: top .2s ease-in-out;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+      rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    background-color: $color-goldLight;
+
+
+    ul {
+      display: flex;
+      align-items: center;
+      padding-left: 1.5rem;
+
+      > li {
+        @include list-item;
+      }
+    }
+  }
+}

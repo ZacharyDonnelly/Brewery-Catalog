@@ -1,0 +1,65 @@
+{
+  "name": "brewery-catalog",
+  "version": "1.0.0",
+  "author": "Zachary Donnelly",
+  "private": true,
+  "dependencies": {
+    "@apollo/client": "^3.6.9",
+    "graphql": "^16.5.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.3.0",
+    "react-scripts": "5.0.1",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "lint:eslint": "eslint --fix --ignore-path .gitignore --ext .js, .jsx",
+    "lint:prettier": "prettier --write --loglevel warn \"**/*.{js,json,jsx,scss}\"",
+    "lint:stylelint": "stylelint --config ./.stylelint.config.js \"**/*.{css,scss}\" --fix"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.0.2",
+    "@commitlint/config-conventional": "^17.0.2",
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^13.3.0",
+    "@testing-library/user-event": "^13.5.0",
+    "classnames": "^2.3.1",
+    "eslint": "^8.18.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-config-react-app": "^7.0.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.2",
+    "postcss": "^8.4.14",
+    "postcss-scss": "^4.0.4",
+    "prettier": "^2.7.1",
+    "sass": "^1.52.3",
+    "scriptlint": "^2.2.0",
+    "style-loader": "^3.3.1",
+    "stylelint": "^14.9.1",
+    "stylelint-config-prettier": "^9.0.3",
+    "stylelint-prettier": "^2.0.0",
+    "stylelint-scss": "^4.2.0"
+  },
+  "scriptlint": {
+    "rules": {
+      "uses-allowed-namespace": false
+    }
+  }
+}

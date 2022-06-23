@@ -1,0 +1,21 @@
+# compiled output
+/dist/
+/build/
+/tmp/
+
+# dependencies
+/node_modules/
+
+# misc
+/coverage/
+!.*
+.*/
+.eslintcache
+.DS_Store
+.gitignore
+.env
+.gitattributes
+.vscode/*
+
+# config files
+*.*

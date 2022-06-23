@@ -1,0 +1,49 @@
+{
+  // EDITOR
+  // --------------------------------------------------
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsx]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "stylelint.vscode-stylelint"
+  },
+  // EMMET
+  // --------------------------------------------------
+  "emmet.triggerExpansionOnTab": true,
+  "emmet.showAbbreviationSuggestions": true,
+  "emmet.showSuggestionsAsSnippets": true,
+  // STYLELINT
+  // ----------------------------------------
+  "stylelint.enable": true,
+  "css.validate": false,
+  "scss.validate": false,
+  "stylelint.snippet": ["css", "less", "postcss", "scss"],
+  "stylelint.validate": ["css", "less", "postcss", "scss"],
+  // FILES
+  // ----------------------------------------
+  "files.associations": {
+    "*.config.js": "javascript"
+  },
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": true
+  },
+  // ESLINT
+  // ----------------------------------------
+  // Linting:,
+  "eslint.alwaysShowStatus": true,
+  "json.format.enable": true,
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  // YARN
+  // ----------------------------------------
+  "search.exclude": {
+    "**/coverage": true,
+    "**/dist": true
+  }
+}
