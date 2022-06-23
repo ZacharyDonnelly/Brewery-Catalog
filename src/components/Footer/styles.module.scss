@@ -1,4 +1,4 @@
-@import '../..//vars';
+@import '../../vars';
 
 .container {
     height: 5rem;
@@ -16,7 +16,7 @@
 
             > li {
                 @include list-item;
-              }
+            }
         }
     }
 }

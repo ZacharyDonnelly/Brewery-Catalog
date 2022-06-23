@@ -1,5 +1,4 @@
-@import '../../BaseStyles/colors.scss';
-@import '../../BaseStyles/mixins.scss';
+@import '../../vars';
 
 .container {
   height: 3rem;
@@ -11,9 +10,9 @@
     display: flex;
     padding: 1rem 2rem 1rem 0rem;
     transition: top .2s ease-in-out;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
-      rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
-    background-color: $color-goldLight;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 3.125rem 6.25rem -1.25rem,
+      rgba(0, 0, 0, 0.3) 0px 1.875rem 3.75rem -1.875rem, rgba(10, 37, 64, 0.35) 0px -.125rem .375rem 0px inset;
+    background-color: $color-accentGreen;
 
 
     ul {

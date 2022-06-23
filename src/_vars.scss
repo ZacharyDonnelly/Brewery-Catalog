@@ -1,3 +1,5 @@
-// Helper filer to make importing variables easier
-@import './BaseStyles/colors.scss';
-@import './BaseStyles/mixins.scss';
+/* Helper filer to make importing variables easier */
+
+@import './src/static/design/vars/colors.scss';
+@import './src/static/design/vars/mixins.scss';
+@import './src/static/design/vars/miscVars.scss';

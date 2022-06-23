@@ -1,1 +1,63 @@
 @import '../.././../vars';
+
+.container {
+    display: flex;
+    flex-direction: column;
+
+    header {
+        display: flex;
+        justify-content: center;
+
+        h1 {
+            margin: 0 0 1.25rem;
+            font-size: 2rem;
+            line-height: 1.5rem;
+        }
+    }
+
+    .formWrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        form {
+            display: flex;
+            flex-direction: column;
+
+            input {
+                width: 20rem;
+                height: 2rem;
+                outline: 2px solid $color-primary;
+                margin-bottom: 1rem;
+                padding-left: .5rem;
+                font-size: 1.125rem;
+                color: $color-black;
+            }
+
+            button {
+                @include primary-button;
+            }
+        }
+    }
+    .listSection {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        align-content: center;
+
+        ul {
+            gap: .75rem;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            margin-top: 2rem;
+
+            li {
+                @include list-item;
+
+                &:nth-of-type(2n) {
+                    margin: 1rem 1rem 1rem 0;
+                }
+            }
+        }
+    }
+}

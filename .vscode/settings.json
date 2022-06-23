@@ -34,5 +34,6 @@
   "search.exclude": {
     "**/coverage": true,
     "**/dist": true
-  }
+  },
+  "compile-hero.disable-compile-files-on-did-save-code": false
 }

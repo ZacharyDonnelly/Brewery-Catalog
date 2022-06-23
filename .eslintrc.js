@@ -20,7 +20,7 @@ module.exports = {
     'jsx-a11y/label-has-for': 0,
     'jsx-a11y/no-noninteractive-element-interactions': 0,
     'jsx-a11y/no-onchange': 0,
-    'no-console': ['warn', { allow: ['warn', 'error'] }],
+    // 'no-console': ['off', { allow: ['warn', 'error'] }],
     'prettier/prettier': ['error', prettierConfig],
     'react/jsx-uses-react': 1,
     'react/require-default-props': 'warn',

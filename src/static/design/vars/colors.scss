@@ -1,0 +1,40 @@
+/*
+ * THEME COLORS
+ * Pigment Red - #ED1B2E
+ * Light Sea Green - #17A7AD
+ * Very Pale Orange - #F8DFBD
+ * Earth Yellow - #E0BE65
+ * Halloween Orange
+ * ---------------------------------------
+*/
+$color-accentRed: #ED1B2E;
+$color-accentGreen: #17A7AD;
+$color-accentOrange: #F15F22;
+$color-accentOrangePale: #F8DFBD;
+$color-primary: #E0BE65;
+/*
+* BASE COLORS
+* White: #fff;
+* Black: #000;
+* Gray: #E0E0E0;
+* GrayLight: #D8D5DB;
+* GrayLightest: #E0E0E0;
+* ---------------------------------------
+*/
+$color-white: #fff;
+$color-black: #000;
+$color-gray: #E0E0E0;
+$color-grayLight: #D8D5DB;
+$color-grayLightest: #E0E0E0;
+/*
+* THEME COLORS W/ MODIFIERS
+* ---------------------------------------
+*/
+$color-yellowLightest: lighten($color-primary, 30%);
+
+/*
+* SELECTOR COLOR VARIABLES
+* BorderGray(bottom-borders, hr's, etc) #C9C9C9;
+* ---------------------------------------
+*/
+$color-borderGray: #C9C9C9;

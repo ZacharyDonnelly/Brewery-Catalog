@@ -45,7 +45,6 @@ module.exports = {
     'no-invalid-double-slash-comments': true,
     'no-invalid-position-at-import-rule': true,
     'no-irregular-whitespace': true,
-    'property-no-unknown': true,
     'comment-no-empty': true,
     // ===
     // SCSS
