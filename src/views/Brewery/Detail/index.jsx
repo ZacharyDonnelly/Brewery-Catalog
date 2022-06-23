@@ -1,12 +1,15 @@
 import { Link, useParams } from 'react-router-dom'
-import Layout from '../../components/Layout'
+import Content from '../../../components/Content'
+import Layout from '../../../components/Layout'
+
+import styles from './styles.module.scss'
 
 const BreweryDetail = () => {
   const { id } = useParams()
 
   return (
     <Layout>
-      <main>
+      <Content className={styles.container}>
         <h1>Brewery {id}</h1>
         <p>Brewtown, Oregon 12345</p>
         <p>United States</p>
@@ -15,7 +18,7 @@ const BreweryDetail = () => {
           <a href="https://example.com">View Website</a>
         </p>
         <Link to="/breweries">Back to Breweries</Link>
-      </main>
+      </Content>
     </Layout>
   )
 }

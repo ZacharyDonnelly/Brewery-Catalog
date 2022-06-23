@@ -2,7 +2,6 @@
 **/dist/*
 **/node_modules/*
 node_modules
-nginx/*
 .gitignore
 *.eslintcache
 
@@ -16,17 +15,7 @@ nginx/*
 /bower_components/
 /node_modules/
 
-# Yarn
-.yarn/cache
-.yarn/plugins/*/**
-.yarn/releases
-.yarn/sdks
-.yarn/unplugged
-.yarn/*.*
-.pnp.*
 
 # Misc
 .husky
 .cache
-*.hbs
-/tsconfig.json

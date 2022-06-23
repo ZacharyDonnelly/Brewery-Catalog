@@ -17,5 +17,4 @@
 .gitattributes
 .vscode/*
 
-# config files
-*.*
+/server/*

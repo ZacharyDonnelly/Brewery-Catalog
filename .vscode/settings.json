@@ -3,20 +3,12 @@
   // --------------------------------------------------
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[jsx]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": true
   },
   "[scss]": {
     "editor.defaultFormatter": "stylelint.vscode-stylelint"
   },
-  // EMMET
-  // --------------------------------------------------
-  "emmet.triggerExpansionOnTab": true,
-  "emmet.showAbbreviationSuggestions": true,
-  "emmet.showSuggestionsAsSnippets": true,
   // STYLELINT
   // ----------------------------------------
   "stylelint.enable": true,
@@ -28,9 +20,6 @@
   // ----------------------------------------
   "files.associations": {
     "*.config.js": "javascript"
-  },
-  "editor.codeActionsOnSave": {
-    "source.organizeImports": true
   },
   // ESLINT
   // ----------------------------------------
