@@ -6,6 +6,8 @@ const LIST_QUERY = gql`
   query Breweries {
     Brewery @rest(type: "Brewery", path: "/breweries?per_page=10") {
       name
+      city
+      state
     }
   }
 `

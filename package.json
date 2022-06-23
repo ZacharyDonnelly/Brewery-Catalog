@@ -13,15 +13,12 @@
     "express": "^4.18.1",
     "graphql": "^16.5.0",
     "graphql-anywhere": "^4.2.7",
-    "graphql-request": "^4.3.0",
     "qs": "^6.10.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-query": "^3.39.1",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
-    "react-spring": "^9.4.5",
-    "web-vitals": "^2.1.4"
+    "react-spring": "^9.4.5"
   },
   "scripts": {
     "start": "concurrently 'yarn' 'react-scripts start' 'yarn start:server'",
@@ -59,7 +56,6 @@
     "eslint-config-prettier": "^8.5.0",
     "eslint-config-react-app": "^7.0.1",
     "eslint-plugin-import": "^2.26.0",
-    "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.30.0",
@@ -83,7 +79,6 @@
     "pre-commit": "lint-staged"
   },
   "scriptlint": {
-    "root": true,
     "rules": {
       "uses-allowed-namespace": false
     }

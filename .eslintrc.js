@@ -5,7 +5,7 @@ const prettierConfig = require('./.prettierrc.js')
 module.exports = {
   root: true,
   extends: ['prettier', 'plugin:jsx-a11y/recommended'],
-  plugins: ['jsx-a11y', 'prettier', 'react', 'import', 'react-hooks'],
+  plugins: ['prettier', 'react', 'import', 'react-hooks'],
   env: {
     browser: true
   },
@@ -17,9 +17,6 @@ module.exports = {
     sourceType: 'module'
   },
   rules: {
-    'jsx-a11y/label-has-for': 0,
-    'jsx-a11y/no-noninteractive-element-interactions': 0,
-    'jsx-a11y/no-onchange': 0,
     // 'no-console': ['off', { allow: ['warn', 'error'] }],
     'prettier/prettier': ['error', prettierConfig],
     'react/jsx-uses-react': 1,

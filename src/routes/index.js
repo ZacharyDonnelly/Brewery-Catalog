@@ -4,8 +4,6 @@ import Client from '../graphql'
 import BreweryDetail from '../views/Brewery/Detail'
 import BreweryList from '../views/Brewery/List'
 
-import '../static/BaseStyles/App.scss'
-
 const App = () => {
   return (
     <ApolloProvider client={Client}>

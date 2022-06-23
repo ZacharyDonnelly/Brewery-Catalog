@@ -1,4 +1,4 @@
-import { ApolloClient, HttpLink, InMemoryCache } from '@apollo/client'
+import { ApolloClient, ApolloLink, HttpLink, InMemoryCache } from '@apollo/client'
 
 import { RestLink } from 'apollo-link-rest'
 
@@ -12,7 +12,7 @@ const link = new HttpLink({
 
 const Client = new ApolloClient({
   cache: new InMemoryCache(),
-  link: restLink
+  link: ApolloLink.from([restLink, link])
 })
 
 export default Client

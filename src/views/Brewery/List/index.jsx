@@ -1,5 +1,5 @@
 import { useQuery } from '@apollo/client'
-import { Link } from 'react-router-dom'
+import Accordion from '../../../components/Accordion'
 import Layout from '../../../components/Layout'
 import LIST_QUERY from '../../../graphql/Query/List'
 
@@ -24,25 +24,19 @@ const BreweryList = () => {
           <button type="reset">Reset</button>
         </form>
       </div>
-      <main className={styles.listSection}>
-        <ul>
+      <div className={styles.popoutList}>
+        <Accordion className={styles.accordion}>
           {!isFetching &&
             data &&
             data.Brewery.map((b, i) => (
               <div key={i}>
-                <li>
-                  <Link to="/breweries">{b.name}</Link>
-                </li>
-                <li>
-                  <Link to="/breweries">{b.city}</Link>
-                </li>
-                <li>
-                  <Link to="/breweries">{b.state}</Link>
-                </li>
+                <span key={i}>{b.name}</span>
+                <span>{b.city}</span>
+                <span>{b.state}</span>
               </div>
             ))}
-        </ul>
-      </main>
+        </Accordion>
+      </div>
     </Layout>
   )
 }

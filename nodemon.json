@@ -3,9 +3,9 @@
   "ignore": [".git", "node_modules/"],
   "verbose": true,
   "runOnChangeOnly": false,
-  "watch": ["src/**/*.js", "./index.js"],
+  "watch": ["**/*.js", "./index.js", "**/*.jsx"],
   "env": {
     "NODE_ENV": "development"
   },
-  "ext": "js,json"
+  "ext": "js,json, jsx"
 }

@@ -1,4 +1,4 @@
-@import '../.././../vars';
+@import '../../../vars';
 
 .container {
     display: flex;
@@ -27,7 +27,7 @@
             input {
                 width: 20rem;
                 height: 2rem;
-                outline: 2px solid $color-primary;
+                outline:  solid $color-primary;
                 margin-bottom: 1rem;
                 padding-left: .5rem;
                 font-size: 1.125rem;
@@ -39,24 +39,25 @@
             }
         }
     }
-    .listSection {
+
+    .popoutList {
         display: flex;
         align-items: center;
-        justify-content: center;
-        align-content: center;
 
-        ul {
-            gap: .75rem;
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            margin-top: 2rem;
+        .accordion {
+            margin: 0;
+            border: 1px solid $color-borderGray;
+            border-width: 0px 1px 1px 1px;
+            padding: .625rem;
+            display: flex;
+            position: absolute;
+            left: 0;
+            top: 5rem;
+            height: 100%;
+            flex-direction: column;
 
-            li {
-                @include list-item;
-
-                &:nth-of-type(2n) {
-                    margin: 1rem 1rem 1rem 0;
-                }
+            &:nth-of-type(1) {
+                border-top-width: 1px
             }
         }
     }

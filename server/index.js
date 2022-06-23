@@ -47,9 +47,6 @@ async function startApolloServer() {
 
   await server.start()
 
-  // enable cors support so when the client on a different host tries to query the server
-  // the client will not be blocked
-  // note: these are really insecure rules to use
   app.use(
     '*',
     cors({

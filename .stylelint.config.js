@@ -39,12 +39,12 @@ module.exports = {
     'font-family-no-missing-generic-family-keyword': true,
     'unit-allowed-list': ['rem', 'vh', 'vw', '%', 'px', 's'],
     'no-descending-specificity': true,
-    // fixes for Vue single file components:
     'no-empty-source': null,
     'no-extra-semicolons': true,
     'no-invalid-double-slash-comments': true,
     'no-invalid-position-at-import-rule': true,
     'no-irregular-whitespace': true,
+    'property-no-unknown': true,
     'comment-no-empty': true,
     // ===
     // SCSS

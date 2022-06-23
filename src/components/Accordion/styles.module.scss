@@ -1,95 +1,71 @@
 @import '../../vars';
 
-.accordion {
-    margin: 0;
-    border: 1px solid $color-borderGray;
-    border-width: 0px 1px 1px 1px;
-    padding: .625rem;
-    display: flex;
-    position: absolute;
-    left: 0;
-    top: 5rem;
-    height: 100%;
-    flex-direction: column;
-
-    &:nth-of-type(1) {
-        border-top-width: 1px
-    }
-}
-
 .item {
     width: 50%;
-    max-height: 25px;
     padding: 1.125rem .625rem;
-    border-bottom: 1px solid ;
     color: $color-white;
-    overflow: hidden;
     cursor: pointer;
-}
-
-.title {
-    font-size: 1.125rem;
-    color: $color-accentGreen;
-    font-weight: 500;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    h4 {
-        transition: 0.2s ease-in-out;
-        font-weight: 400;
-        margin-bottom: .625rem;
-    }
-
-    i {
-        transition: 0.2s ease-in-out;
-        transform-origin: center;
-        margin-bottom: .625rem;
-    }
 
 
+    .title {
+        font-size: 1.125rem;
+        color: $color-accentGreen;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
 
-    .btn {
-        @include transparent-button;
+        h4 {
+            transition: 0.2s ease-in-out;
+            font-weight: 400;
+            margin-bottom: .625rem;
+        }
 
-        .toggle {
-            display: flex;
+        i {
+            transition: 0.2s ease-in-out;
+            transform-origin: center;
+            margin-bottom: .625rem;
+        }
 
-            &:hover {
-                fill: $color-accentRed;
-                transition: all 0.35s ease;
-            }
 
-            svg {
-                width: .75rem;
-                height: .75rem;
+
+        .btn {
+            @include transparent-button;
+
+            .toggle {
+                display: flex;
+
+                &:hover {
+                    fill: $color-accentRed;
+                    transition: all 0.35s ease;
+                }
+
+                svg {
+                    width: .75rem;
+                    height: .75rem;
+                }
             }
         }
     }
-}
 
-.content {
-    overflow: hidden;
-    max-height: 62.5rem;
-    transition: max-height 1s ease-in-out;
-}
 
-.open {
-    max-height: 0px;
-    transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
-}
+    .content {
+        max-height: 62.5rem;
+        transition: max-height 1s ease-in-out;
 
-@media (min-width: 900px) {
-    .accordion__item {
-        width: 40%;
-    }
-}
 
-@media (max-width: 600px) {
-    h1 {
-        font-size: 1.875px;
-    }
-    .accordion__item {
-        width: 80%;
+        @media (min-width: $breakpoint-md) {
+            .item {
+                width: 40%;
+            }
+        }
+
+        @media (max-width: $breakpoint-sm) {
+            h1 {
+                font-size: 1.875px;
+            }
+            .accordion__item {
+                width: 80%;
+            }
+        }
     }
 }
