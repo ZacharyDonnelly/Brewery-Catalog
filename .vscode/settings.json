@@ -6,6 +6,12 @@
   "editor.codeActionsOnSave": {
     "source.organizeImports": true
   },
+  "[jsx]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[js]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "[scss]": {
     "editor.defaultFormatter": "stylelint.vscode-stylelint"
   },
@@ -34,5 +40,9 @@
   "search.exclude": {
     "**/coverage": true,
     "**/dist": true
+  },
+  "typescript.format.enable": false,
+  "[javascript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
   }
 }

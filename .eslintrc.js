@@ -20,6 +20,8 @@ module.exports = {
     // 'no-console': ['off', { allow: ['warn', 'error'] }],
     'prettier/prettier': ['error', prettierConfig],
     'react/jsx-uses-react': 1,
+    'react/jsx-uses-vars': 1,
+    'react/jsx-in-scope': 0,
     'react/require-default-props': 'warn',
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',

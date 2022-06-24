@@ -13,9 +13,9 @@ const BreweryDetail = () => {
       <p>United States</p>
       <p>8005551234</p>
       <p>
-        <a href="https://example.com">View Website</a>
+        <a href='https://example.com'>View Website</a>
       </p>
-      <Link to="/breweries">Back to Breweries</Link>
+      <Link to='/breweries'>Back to Breweries</Link>
     </Layout>
   )
 }

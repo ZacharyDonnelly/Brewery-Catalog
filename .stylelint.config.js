@@ -1,3 +1,5 @@
+'use strict'
+
 module.exports = {
   extends: ['stylelint-config-prettier'],
   plugins: ['stylelint-scss', 'stylelint-prettier'],
@@ -38,7 +40,6 @@ module.exports = {
     'font-family-no-duplicate-names': true,
     'font-family-no-missing-generic-family-keyword': true,
     'unit-allowed-list': ['rem', 'vh', 'vw', '%', 'px', 's'],
-    'no-descending-specificity': true,
     'no-empty-source': null,
     'no-extra-semicolons': true,
     'no-invalid-double-slash-comments': true,

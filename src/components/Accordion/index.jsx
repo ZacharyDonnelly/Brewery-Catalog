@@ -42,7 +42,7 @@ const Accordion = ({ name, city, state }) => {
 
   return (
     <animated.div className={styles.item} style={openAnimation}>
-      <div className={styles.title} role="button" tabbable="0" onClick={toggleHandler}>
+      <div className={styles.title} role='button' tabbable='0' onClick={toggleHandler}>
         <h4 style={titleStyles.accordionTitle}>{name}</h4>
         <animated.i style={iconAnimation}>
           <ExpandMoreIcon />

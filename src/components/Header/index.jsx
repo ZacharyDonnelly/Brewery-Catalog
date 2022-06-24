@@ -8,10 +8,10 @@ const Header = () => {
       <header>
         <ul>
           <li>
-            <Link to="/">List</Link>
+            <Link to='/'>List</Link>
           </li>
           <li>
-            <Link to="/details">Details</Link>
+            <Link to='/details'>Details</Link>
           </li>
         </ul>
       </header>
