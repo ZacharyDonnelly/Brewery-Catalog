@@ -8,9 +8,8 @@
 
 html,
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
+    'Droid Sans', 'Helvetica Neue', sans-serif;
   display: flex;
   flex: 1 0 auto;
   flex-direction: column;
@@ -23,11 +22,13 @@ body {
   background-color: $color-yellowLightest;
 }
 
-ul, li {
+ul,
+li {
   list-style: none;
 }
 
-h1, h2 {
+h1,
+h2 {
   margin: 0;
   font-weight: 600;
   line-height: 1.5rem;

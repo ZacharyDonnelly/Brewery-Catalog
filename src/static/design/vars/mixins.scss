@@ -1,20 +1,20 @@
 @import './colors.scss';
 
 @mixin list-item {
-    font-size: 1.25rem;
-    font-weight: 600;
-    line-height: 1.125rem;
-    color: $color-black;
-    cursor: pointer;
-    text-align: left;
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.125rem;
+  color: $color-black;
+  cursor: pointer;
+  text-align: left;
 
-    &:first-of-type {
-        margin-right: 1rem;
-    }
+  &:first-of-type {
+    margin-right: 1rem;
+  }
 
-    &:hover {
-        color: $color-accentRed;
-    }
+  &:hover {
+    color: $color-accentRed;
+  }
 }
 
 /*
@@ -22,30 +22,29 @@
 */
 
 @mixin button-shared {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    font-size: 1.25rem;
-    font-weight: 600;
-    border: none;
-    outline: inherit;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 1.25rem;
+  font-weight: 600;
+  border: none;
+  outline: inherit;
 }
 
 @mixin primary-button {
-    @include button-shared;
-    justify-content: center;
-    background-color: $color-accentOrange;
-    padding: .5rem 2rem;
-    color: $color-white;
+  @include button-shared;
+  justify-content: center;
+  background-color: $color-accentOrange;
+  padding: 0.5rem 2rem;
+  color: $color-white;
 
-
-    &:first-of-type {
-        margin-bottom: 1rem;
-    }
+  &:first-of-type {
+    margin-bottom: 1rem;
+  }
 }
 
 @mixin transparent-button {
-    @include button-shared;
-    background-color: transparent;
-    font-size: 1.25rem;
+  @include button-shared;
+  background-color: transparent;
+  font-size: 1.25rem;
 }
