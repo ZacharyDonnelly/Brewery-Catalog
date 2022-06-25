@@ -16,28 +16,28 @@ const Accordion = ({ name, city, state }) => {
   const titleStyles = {
     //if open is true, change color of title
     accordionTitle: {
-      color: open ? '#ED1B2E' : '#000'
-    }
+      color: open ? '#ED1B2E' : '#000',
+    },
   }
   //open animation with react spring
 
   const openAnimation = useSpring({
     from: { opacity: '0', maxHeight: '25px' },
     to: { opacity: '1', maxHeight: open ? '200px' : '25px' },
-    config: { duration: '300' }
+    config: { duration: '300' },
   })
 
   //rotate animation
   const iconAnimation = useSpring({
     from: {
       transform: 'rotate(0deg)',
-      color: '#fff'
+      color: '#fff',
     },
     to: {
       transform: open ? 'rotate(180deg)' : 'rotate(0deg)',
-      color: open ? '#ED1B2E' : '#000'
+      color: open ? '#ED1B2E' : '#000',
     },
-    config: { duration: '120' }
+    config: { duration: '120' },
   })
 
   return (

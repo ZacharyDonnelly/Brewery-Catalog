@@ -9,12 +9,6 @@
 # misc
 /coverage/
 !.*
-.*/
-.eslintcache
-.DS_Store
-.gitignore
-.env
-.gitattributes
 .vscode/*
 
 /server/*

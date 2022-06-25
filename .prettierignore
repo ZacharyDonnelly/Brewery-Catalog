@@ -1,21 +1,9 @@
-**/build/*
-**/dist/*
-**/node_modules/*
-node_modules
-.gitignore
-*.eslintcache
-
-# misc
-/coverage/
-!.*
-.eslintcache
-.lint-todo/
-
-# dependencies
-/bower_components/
-/node_modules/
-
-
 # Misc
 .husky
 .cache
+/coverage/
+.eslintcache
+/build/
+.vscode
+.DS_Store
+

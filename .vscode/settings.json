@@ -2,18 +2,9 @@
   // EDITOR
   // --------------------------------------------------
   "editor.formatOnSave": true,
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.codeActionsOnSave": {
+    "editor.formatOnSave": true,
     "source.organizeImports": true
-  },
-  "[jsx]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[js]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[scss]": {
-    "editor.defaultFormatter": "stylelint.vscode-stylelint"
   },
   // STYLELINT
   // ----------------------------------------
@@ -22,27 +13,28 @@
   "scss.validate": false,
   "stylelint.snippet": ["css", "less", "postcss", "scss"],
   "stylelint.validate": ["css", "less", "postcss", "scss"],
+  // GIT
+  // ----------------------------------------
+  "git.fetchOnPull": true,
   // FILES
   // ----------------------------------------
-  "files.associations": {
-    "*.config.js": "javascript"
-  },
+  "files.autoSave": "onFocusChange",
   // ESLINT
   // ----------------------------------------
   // Linting:,
+  "eslint.format.enable": true,
   "eslint.alwaysShowStatus": true,
+  // An array of language identifiers specify the files to be validated
+  "eslint.options": {
+    "extensions": [".jsx", ".js"]
+  },
   "json.format.enable": true,
-  "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  // YARN
-  // ----------------------------------------
-  "search.exclude": {
-    "**/coverage": true,
-    "**/dist": true
-  },
-  "typescript.format.enable": false,
+  // Turn off Prettier format on save, use ESLint to format instead
   "[javascript]": {
-    "editor.defaultFormatter": "vscode.typescript-language-features"
+    "editor.formatOnSave": false
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "stylelint.vscode-stylelint",
+    "editor.formatOnSave": true
   }
 }

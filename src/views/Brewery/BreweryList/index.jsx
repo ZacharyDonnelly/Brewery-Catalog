@@ -1,24 +1,25 @@
 import { useQuery } from '@apollo/client'
 
-import Layout from '../../../components/Layout'
+import Layout from '../../../BaseComponents/Layout'
+import LoadingSpinner from '../../../Components/LoadingSpinner'
 import LIST_QUERY from '../../../graphql/Query/List'
 import BreweryListItems from './BreweryListItems'
-import styles from './styles.module.scss'
+import styles from './styles.modusle.scss'
 
 const BreweryList = () => {
   const { data, isFetching, error } = useQuery(LIST_QUERY)
 
-  if (isFetching) return 'Loading...'
-  if (error) return <pre>{error.message}</pre>
+  if (isFetching) return <LoadingSpinner />
+  if (error) return <pre> {error.message} </pre>
   console.log(data)
 
   return (
     <Layout className={styles.container}>
       <header>
-        <h1>Brewery Catalog</h1>
+        <h1> Brewery Catalog </h1>
       </header>
       <div className={styles.formWrapper}>
-        <BreweryListItems isFetching={isFetching} />
+        <BreweryListItems data={data} isFetching={isFetching} />
         <form>
           <input type='text' name='search' placeholder='Find a brewery' />
           <button type='button'>Search</button>

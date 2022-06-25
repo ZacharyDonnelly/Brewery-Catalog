@@ -1,42 +1,42 @@
-@import '../../../vars';
+@import "../../../vars";
 
 .container {
-  display: flex;
-  flex-direction: column;
+	display: flex;
+	flex-direction: column;
 
-  header {
-    display: flex;
-    justify-content: center;
+	header {
+		display: flex;
+		justify-content: center;
 
-    h1 {
-      margin: 0 0 1.25rem;
-      font-size: 2rem;
-      line-height: 1.5rem;
-    }
-  }
+		h1 {
+			margin: 0 0 1.25rem;
+			font-size: 2rem;
+			line-height: 1.5rem;
+		}
+	}
 
-  .formWrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+	.formWrapper {
+		display: flex;
+		justify-content: center;
+		align-items: center;
 
-    form {
-      display: flex;
-      flex-direction: column;
+		form {
+			display: flex;
+			flex-direction: column;
 
-      input {
-        width: 20rem;
-        height: 2rem;
-        outline: solid $color-primary;
-        margin-bottom: 1rem;
-        padding-left: 0.5rem;
-        font-size: 1.125rem;
-        color: $color-black;
-      }
+			input {
+				width: 20rem;
+				height: 2rem;
+				outline: solid $color-primary;
+				margin-bottom: 1rem;
+				padding-left: 0.5rem;
+				font-size: 1.125rem;
+				color: $color-black;
+			}
 
-      button {
-        @include primary-button;
-      }
-    }
-  }
+			button {
+				@include primary-button;
+			}
+		}
+	}
 }

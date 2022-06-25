@@ -1,7 +1,7 @@
-import { Link, useParams } from 'react-router-dom'
-import Layout from '../../../components/Layout'
+import { Link, useParams } from "react-router-dom"
+import Layout from "../../../BaseComponents/Layout"
 
-import styles from './styles.module.scss'
+import styles from "./styles.module.scss"
 
 const BreweryDetail = () => {
   const { id } = useParams()

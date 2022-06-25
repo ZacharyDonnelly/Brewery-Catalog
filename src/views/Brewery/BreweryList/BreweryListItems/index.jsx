@@ -1,11 +1,12 @@
 import cn from 'classnames'
+
 import { useState } from 'react'
 import { animated, useSpring } from 'react-spring'
-import Accordion from '../../../../components/Accordion'
+import Accordion from '../../../../Components/Accordion'
 
 import styles from './styles.module.scss'
 
-const BreweryList = ({ isFetching }) => {
+const BreweryList = ({ isFetching, data}) => {
   const [isOpen, setIsOpen] = useState(false)
 
   //title animation
@@ -26,7 +27,7 @@ const BreweryList = ({ isFetching }) => {
       >
         {!isFetching &&
           data &&
-          data.Brewery.map((b, i) => <Accordion key={i} name={b.name} city={b.city} state={b.state} />)}
+          data?.Brewery.map((b, i) => <Accordion key={i} name={b.name} city={b.city} state={b.state} />)}
       </div>
     </div>
   )
