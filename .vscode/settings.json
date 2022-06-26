@@ -22,17 +22,12 @@
   // ESLINT
   // ----------------------------------------
   // Linting:,
-  "eslint.format.enable": true,
   "eslint.alwaysShowStatus": true,
   // An array of language identifiers specify the files to be validated
   "eslint.options": {
     "extensions": [".jsx", ".js"]
   },
   "json.format.enable": true,
-  // Turn off Prettier format on save, use ESLint to format instead
-  "[javascript]": {
-    "editor.formatOnSave": false
-  },
   "[scss]": {
     "editor.defaultFormatter": "stylelint.vscode-stylelint",
     "editor.formatOnSave": true
