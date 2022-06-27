@@ -1,6 +1,6 @@
 import { useQuery } from "@apollo/client"
 import { useLazyQuery } from "@apollo/react-hooks"
-import { useCallback, useState } from "react"
+import { useCallback, useEffect, useState } from "react"
 import Content from "../../../BaseComponents/Content"
 
 import LIST_QUERY from "../../../graphql/Query/List"
@@ -10,24 +10,35 @@ import BreweryListCard from "./BreweryListCard"
 import styles from "./styles.module.scss"
 
 const BreweryList = () => {
+	const [breweries, setBreweries] = useState([])
 	const [search, setSearch] = useState("")
 	const ListData = useQuery(LIST_QUERY)
 	const [getResults, { loading, data }] = useLazyQuery(SEARCH_QUERY, {
 		variables: { id: search }
 	})
 
+	const breweryList = ListData?.data?.Brewery
+	const isFetching = ListData?.loading
+
 	const handleSearch = useCallback(() => {
 		getResults()
 	}, [])
 
-	const handleSearchInput = useCallback((e) => {
-		setSearch(e.target.value)
-	}, [])
+	useEffect(() => {
+		if (breweryList && !isFetching && !data) {
+			setBreweries(breweryList)
+		} else if (data?.Results && !loading) {
+			const results = data?.Results
+			setBreweries(results)
+		}
+
+		console.log(breweries)
+	}, [isFetching, breweries, breweryList, data, loading])
 
 	return (
 		<Content className={styles.container}>
 			<header>
-				<h1> Brewery Catalog </h1>
+				<h1>Brewery Catalog</h1>
 			</header>
 			<div className={styles.formWrapper}>
 				<form>
@@ -35,7 +46,7 @@ const BreweryList = () => {
 						type='text'
 						name='search'
 						placeholder='Find a brewery'
-						onChange={(e) => handleSearchInput(e)}
+						onChange={(e) => setSearch(e.target.value)}
 					/>
 					<button type='button' onClick={handleSearch}>
 						Search
@@ -45,9 +56,9 @@ const BreweryList = () => {
 					</button>
 				</form>
 				{!loading && data?.Results.length > 0 ? (
-					<BreweryListCard data={data?.Results} isFetching={loading} />
+					<BreweryListCard data={breweries} isFetching={loading} />
 				) : (
-					<BreweryListCard data={ListData?.data?.Brewery} isFetching={ListData.isFetching} />
+					<BreweryListCard data={breweries} isFetching={isFetching} />
 				)}
 			</div>
 		</Content>

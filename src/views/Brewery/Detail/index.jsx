@@ -2,6 +2,7 @@ import { useQuery } from "@apollo/client"
 import { useEffect, useState } from "react"
 import { Link, useParams } from "react-router-dom"
 import DETAIL_QUERY from "../../../graphql/Query/Detail"
+import { CaretLeft } from "../../../static/design/vars/icons"
 import styles from "./styles.module.scss"
 
 const BreweryDetail = () => {
@@ -14,32 +15,41 @@ const BreweryDetail = () => {
 		phone: "",
 		website_url: ""
 	})
-	const breweryDetails = useQuery(DETAIL_QUERY, {
+	const { data, loading, error } = useQuery(DETAIL_QUERY, {
 		variables: { id }
 	})
 
 	useEffect(() => {
-		if (breweryDetails?.data?.Details && !breweryDetails?.loading) {
+		if (data?.Details && !loading) {
 			setDetails({
-				name: breweryDetails?.data?.Details?.name,
-				city: breweryDetails?.data?.Details?.city,
-				state: breweryDetails?.data?.Details?.state,
-				country: breweryDetails?.data?.Details?.country,
-				phone: breweryDetails?.data?.Details?.phone,
-				website_url: breweryDetails?.data?.Details?.website_url
+				name: data?.Details?.name,
+				city: data?.Details?.city,
+				state: data?.Details?.state,
+				country: data?.Details?.country,
+				phone: data?.Details?.phone,
+				website_url: data?.Details?.website_url
 			})
 		}
-	}, [breweryDetails])
+	}, [data, loading])
 
 	return (
 		<div className={styles.container}>
-			<p>{details.name}</p>
-			<p>{details.city}</p>
-			<p>{details.state}</p>
-			<p>{details.country}</p>
-			<p>{details.phone}</p>
-			<p>{details.website_url}</p>
-			<Link to='/breweries'>Back to Breweries</Link>
+			<div className={styles.detailView}>
+				<header>
+					<h2>{details.name}</h2>
+				</header>
+				<p>City: {details.city}</p>
+				<p>State: {details.state}</p>
+				<p>Country: {details.country}</p>
+				<p>Telephone: {details.phone}</p>
+				<p>{details.website_url && `Website: ${details.website_url}`}</p>
+			</div>
+			<button type='button'>
+				<Link to='/breweries'>
+					<CaretLeft />
+					Back to Breweries
+				</Link>
+			</button>
 		</div>
 	)
 }
