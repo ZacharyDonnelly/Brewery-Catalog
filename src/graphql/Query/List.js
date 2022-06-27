@@ -1,10 +1,10 @@
 import { gql } from "@apollo/client"
 
-export const endpoint = "breweries?per_page=10"
+const endpoint = "breweries?per_page=10"
 
 const LIST_QUERY = gql`
 	query Breweries {
-		Brewery @rest(type: "Brewery", path: "/breweries?per_page=10") {
+		Brewery @rest(type: "Brewery", path: "${endpoint}") {
 			name
 			city
 			state

@@ -11,6 +11,7 @@ const typeDefs = gql`
 	"A simple type for getting started!"
 	type Query {
 		Breweries: [Brewery]!
+		SearchBreweries(id: String!): Brewery!
 	}
 
 	"Brewery Information"
@@ -24,7 +25,8 @@ const typeDefs = gql`
 
 const resolvers = {
 	Query: {
-		Breweries: (_, __, { dataSources }) => dataSources.BreweryCatalog.getBreweries()
+		Breweries: (_, __, { dataSources }) => dataSources.BreweryCatalog.getBreweries(),
+		SearchBreweries: (_, { id }, { dataSources }) => dataSources.BreweryCatalog.searchBreweries(id)
 	}
 }
 
