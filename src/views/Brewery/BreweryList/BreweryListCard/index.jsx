@@ -13,7 +13,7 @@ const BreweryList = ({ isFetching, data }) => {
 							<div>
 								<h3 className={styles.header}>{b.name}</h3>
 								<div className={styles.link}>
-									<Link to='/details'>
+									<Link to={`/details/${b.id}`}>
 										<span>
 											View Brewery <CaretRight className={styles.caret} />
 										</span>
@@ -21,7 +21,6 @@ const BreweryList = ({ isFetching, data }) => {
 								</div>
 							</div>
 							<div>
-								<h4>Location</h4>
 								<p>{`City: ${b.city}`}</p>
 								<p>{`State: ${b.state}`}</p>
 							</div>

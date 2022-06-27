@@ -25,7 +25,6 @@ const BreweryList = () => {
 					<button type='button'>Search</button>
 					<button type='reset'>Reset</button>
 				</form>
-				{/* <div className={styles.list}></div> */}
 				<BreweryListCard data={data} isFetching={isFetching} />
 			</div>
 		</Content>
