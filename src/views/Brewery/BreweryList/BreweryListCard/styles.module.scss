@@ -1,0 +1,98 @@
+@import "../../../../vars";
+
+.container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	h1 {
+		margin: 1.125rem;
+		font-size: 2.5rem;
+		color: $color-black;
+		font-weight: 600;
+		line-height: 1.25rem;
+		text-align: left;
+	}
+
+	.cardWrapper {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin-top: 2rem;
+
+
+		.cardContainer {
+			display: grid;
+			width:100%;
+			height:100%;
+			grid-template-columns: 1fr 1fr;
+			gap: 1rem;
+			color: $color-black;
+
+			.card {
+				display: flex;
+				justify-content: center;
+				flex-direction: column;
+				text-align: center;
+				align-items: center;
+				transition: 0.3s all ease-in-out;
+				height: 250px;
+				max-height: 250px;
+
+				&.cardLg {
+					.content .header {
+						margin-bottom: 2rem;
+					}
+
+					.content .info {
+						margin-bottom: .25rem;
+					}
+				}
+
+				&:hover{
+					margin-top: -10px;
+				}
+
+				.content {
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+					align-content: center;
+					justify-content: center;
+					width: 250px;
+					height: 250px;
+					max-height: 250px;
+					background: $color-accentOrangePale;
+					border-radius: 5px;
+					padding: 25px 25px 0;
+					cursor: pointer;
+
+					.header {
+						text-transform: uppercase;
+						font-size: 20px;
+						margin-bottom: .5rem;
+					}
+
+					.info {
+						margin-bottom: .25rem;
+					}
+
+
+					button {
+						display: flex;
+						padding: 10px;
+						justify-self: center;
+						border-radius: 10px;
+						background: $color-accentOrange;
+						color: $color-white;
+						font-weight: 600;
+						cursor: pointer;
+						border: none;
+						margin: 50px auto 25px;
+					}
+				}
+			}
+		}
+	}
+}

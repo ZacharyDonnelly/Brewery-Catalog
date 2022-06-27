@@ -4,7 +4,7 @@ import Layout from "../../../BaseComponents/Layout"
 import LoadingSpinner from "../../../Components/LoadingSpinner"
 import LIST_QUERY from "../../../graphql/Query/List"
 
-import BreweryListItems from "./BreweryListItems"
+import BreweryListCard from "./BreweryListCard"
 import styles from "./styles.module.scss"
 
 const BreweryList = () => {
@@ -20,12 +20,14 @@ const BreweryList = () => {
 				<h1> Brewery Catalog </h1>
 			</header>
 			<div className={styles.formWrapper}>
-				<BreweryListItems data={data} isFetching={isFetching} />
 				<form>
 					<input type='text' name='search' placeholder='Find a brewery' />
 					<button type='button'>Search</button>
 					<button type='reset'>Reset</button>
 				</form>
+				<div className={styles.list}>
+					<BreweryListCard data={data} isFetching={isFetching} />
+				</div>
 			</div>
 		</Layout>
 	)

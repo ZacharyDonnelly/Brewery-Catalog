@@ -17,8 +17,10 @@
 
 	.formWrapper {
 		display: flex;
+		flex-direction: column;
 		justify-content: center;
 		align-items: center;
+		padding: 0 5rem;
 
 		form {
 			display: flex;
