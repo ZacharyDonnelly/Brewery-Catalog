@@ -2,9 +2,9 @@
 
 .container {
 	display: flex;
-	flex-direction: column;
-	justify-content: center;
 	align-items: center;
+	justify-content: center;
+	padding: 2rem;
 
 	h1 {
 		margin: 1.125rem;
@@ -15,81 +15,102 @@
 		text-align: left;
 	}
 
-	.cardWrapper {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		margin-top: 2rem;
+	.cardContainer {
+		display: grid;
+		grid-template-columns: 2fr 2fr;
+		gap: 1rem;
+		color: $color-black;
 
+		.card {
+			display: flex;
+			flex-direction: column;
+			background-color: $color-white;
+			max-width: 20.75rem;
+			min-height: 20.75rem;
+			overflow: hidden;
+			border-radius: .5rem;
+			justify-content: space-between;
+			text-decoration: none;
+			margin: 1em;
+			padding: 3rem 3rem;
+			box-shadow: 0 1.5rem 2.5rem -.5rem rgba(#000000, .1);
+			transition: transform .45s ease, background .45s ease;
 
-		.cardContainer {
-			display: grid;
-			width:100%;
-			height:100%;
-			grid-template-columns: 1fr 1fr;
-			gap: 1rem;
-			color: $color-black;
+			h3 {
+				color: #2E3C40;
+				font-size: 2.5rem;
+				font-weight: 600;
+				padding-bottom: 1rem;
+				margin: 0 0 1rem;
+				border-bottom: 2px solid $color-borderGray;
+				transition: color .45s ease, border .45s ease;
+			}
 
-			.card {
-				display: flex;
-				justify-content: center;
-				flex-direction: column;
-				text-align: center;
-				align-items: center;
-				transition: 0.3s all ease-in-out;
-				height: 250px;
-				max-height: 250px;
+			h4 {
+				font-size: 1.25rem;
+				line-height: 1.25rem;
+				letter-spacing: 0.006px;
+				font-weight: 600;
+				padding-bottom: .5rem;
+			}
 
-				&.cardLg {
-					.content .header {
-						margin-bottom: 2rem;
-					}
+			p {
+				font-size: 1.25rem;
+				font-weight: 500;
+				line-height: 1.8rem;
+				transform: translateY(-1rem);
+				transition: opacity .45s ease, transform .5s ease;
+				margin-top: 1rem;
+			}
 
-					.content .info {
-						margin-bottom: .25rem;
-					}
+			.link {
+				cursor: pointer;
+				display: block;
+				font-size: 1.125rem;
+				font-weight: 600;
+				line-height: 1.2rem;
+				transition: color .45s ease;
+				margin-bottom: 2rem;
+				text-transform: uppercase;
+				letter-spacing: 0.1rem;
+
+				&:hover {
+					color: $color-accentGreen;
 				}
 
-				&:hover{
-					margin-top: -10px;
+				.caret {
+					margin-left: .5rem;
+					transition: transform .6s ease;
+
+					path {
+						fill: $color-black;
+						transition: fill .45s ease;
+					}
+				}
+			}
+
+
+			&:hover {
+				background: lighten($color-accentRed, 20%);
+				transform: scale(1.02);
+				cursor: pointer;
+
+				h3 {
+					color: $color-white;
+					border-bottom-color: $color-white;
 				}
 
-				.content {
-					display: flex;
-					flex-direction: column;
-					align-items: center;
-					align-content: center;
-					justify-content: center;
-					width: 250px;
-					height: 250px;
-					max-height: 250px;
-					background: $color-accentOrangePale;
-					border-radius: 5px;
-					padding: 25px 25px 0;
-					cursor: pointer;
+				.link {
+					&:hover {
+						color: $color-accentGreen;
 
-					.header {
-						text-transform: uppercase;
-						font-size: 20px;
-						margin-bottom: .5rem;
-					}
+						.caret {
+							animation: point 1.25s infinite alternate;
 
-					.info {
-						margin-bottom: .25rem;
-					}
-
-
-					button {
-						display: flex;
-						padding: 10px;
-						justify-self: center;
-						border-radius: 10px;
-						background: $color-accentOrange;
-						color: $color-white;
-						font-weight: 600;
-						cursor: pointer;
-						border: none;
-						margin: 50px auto 25px;
+							path {
+								fill: $color-accentGreen;
+							}
+						}
 					}
 				}
 			}

@@ -25,9 +25,9 @@ const BreweryList = () => {
 					<button type='button'>Search</button>
 					<button type='reset'>Reset</button>
 				</form>
-				<div className={styles.list}>
-					<BreweryListCard data={data} isFetching={isFetching} />
-				</div>
+				{/* <div className={styles.list}> */}
+				<BreweryListCard data={data} isFetching={isFetching} />
+				{/* </div> */}
 			</div>
 		</Layout>
 	)

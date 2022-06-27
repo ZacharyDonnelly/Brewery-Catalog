@@ -1,9 +1,9 @@
 @import "../../vars";
 
 .container {
-	height: 3rem;
+	min-height: 5rem;
 	width: 100%;
-	margin-bottom: 2rem;
+	position: relative;
 
 	header {
 		position: relative;
