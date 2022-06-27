@@ -27,6 +27,17 @@ class BreweryCatalog extends RESTDataSource {
 			console.error("error", error)
 		}
 	}
+
+	async getBreweryDetails(id) {
+		try {
+			const data = await this.get(`breweries/${id}`, null, {
+				cacheOptions: { ttl: 60 }
+			})
+			return data
+		} catch (error) {
+			console.error("error", error)
+		}
+	}
 }
 
 export default BreweryCatalog

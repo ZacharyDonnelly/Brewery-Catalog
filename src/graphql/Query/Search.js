@@ -2,7 +2,7 @@ import { gql } from "@apollo/client"
 
 const SEARCH_QUERY = gql`
 	query SearchBreweries($id: String!) {
-		Info(id: $id) @rest(type: "Brewery", path: "/breweries/search?query={args.id}") {
+		Results(id: $id) @rest(type: "Brewery", path: "/breweries/search?query={args.id}") {
 			name
 			city
 			state

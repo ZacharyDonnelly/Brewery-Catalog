@@ -11,7 +11,8 @@ const typeDefs = gql`
 	"A simple type for getting started!"
 	type Query {
 		Breweries: [Brewery]!
-		SearchBreweries(id: String!): Brewery!
+		SearchBreweries(id: String!): [Brewery]
+		BreweryDetails(id: String!): Brewery!
 	}
 
 	"Brewery Information"
@@ -21,12 +22,24 @@ const typeDefs = gql`
 		state: String!
 		id: String!
 	}
+
+	"Brewery Details"
+	type BreweryDetails {
+		name: String
+		city: String
+		state: String
+		id: String
+		country: String
+		phone: String
+		website_url: String
+	}
 `
 
 const resolvers = {
 	Query: {
 		Breweries: (_, __, { dataSources }) => dataSources.BreweryCatalog.getBreweries(),
-		SearchBreweries: (_, { id }, { dataSources }) => dataSources.BreweryCatalog.searchBreweries(id)
+		SearchBreweries: (_, { id }, { dataSources }) => dataSources.BreweryCatalog.searchBreweries(id),
+		BreweryDetails: (_, { id }, { dataSources }) => dataSources.BreweryCatalog.getBreweryDetails(id)
 	}
 }
 
