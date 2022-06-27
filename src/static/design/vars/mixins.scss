@@ -16,7 +16,7 @@
 @mixin primary-button {
 	@include button-shared;
 	justify-content: center;
-	border: .25rem solid $color-borderGray;
+	border: 0.25rem solid $color-borderGray;
 	background-color: $color-white;
 	border-radius: $border-radius;
 	padding: 1rem 2rem;
@@ -27,6 +27,6 @@
 	}
 
 	&:hover {
-		background-color: $color-accentRedDark;
+		background-color: $color-accentRedLight;
 	}
 }
