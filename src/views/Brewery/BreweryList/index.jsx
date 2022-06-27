@@ -1,6 +1,6 @@
 import { useQuery } from "@apollo/client"
+import Content from "../../../BaseComponents/Content"
 
-import Layout from "../../../BaseComponents/Layout"
 import LoadingSpinner from "../../../Components/LoadingSpinner"
 import LIST_QUERY from "../../../graphql/Query/List"
 
@@ -15,7 +15,7 @@ const BreweryList = () => {
 	console.log(data)
 
 	return (
-		<Layout className={styles.container}>
+		<Content className={styles.container}>
 			<header>
 				<h1> Brewery Catalog </h1>
 			</header>
@@ -25,11 +25,10 @@ const BreweryList = () => {
 					<button type='button'>Search</button>
 					<button type='reset'>Reset</button>
 				</form>
-				{/* <div className={styles.list}> */}
+				{/* <div className={styles.list}></div> */}
 				<BreweryListCard data={data} isFetching={isFetching} />
-				{/* </div> */}
 			</div>
-		</Layout>
+		</Content>
 	)
 }
 

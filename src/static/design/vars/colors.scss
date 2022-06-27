@@ -31,6 +31,9 @@ $color-grayLightest: #e0e0e0;
 * ---------------------------------------
 */
 $color-yellowLightest: lighten($color-primary, 30%);
+$color-accentOrangeDark: darken($color-accentOrange, 10%);
+$color-accentRedDark: darken($color-accentRed, 10%);
+$color-accentRedLight: lighten($color-accentRed, 20%);
 
 /*
 * SELECTOR COLOR VARIABLES

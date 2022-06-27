@@ -10,7 +10,7 @@
 		justify-content: center;
 
 		h1 {
-			margin: 0 0 1.25rem;
+			margin: 0 0 3rem;
 			font-size: 3rem;
 			line-height: 1.5rem;
 		}
@@ -26,13 +26,15 @@
 		form {
 			display: flex;
 			flex-direction: column;
+			width: 30rem !important;
 
 			input {
-				width: 20rem;
-				height: 2rem;
-				outline: solid $color-primary;
+				width: 30rem;
+				height: 3rem;
+				outline: solid $color-borderGray;
 				margin-bottom: 1rem;
 				padding-left: 0.5rem;
+				font-size: 500;
 				font-size: 1.125rem;
 				color: $color-black;
 			}
