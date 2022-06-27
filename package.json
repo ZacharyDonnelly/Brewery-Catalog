@@ -19,6 +19,7 @@
   ],
   "dependencies": {
     "@apollo/client": "^3.6.9",
+    "@apollo/react-hooks": "^4.0.0",
     "apollo-datasource-rest": "^3.6.1",
     "apollo-link-rest": "^0.9.0-rc.1",
     "apollo-server": "^3.9.0",

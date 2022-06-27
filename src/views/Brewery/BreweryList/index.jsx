@@ -1,4 +1,5 @@
 import { useQuery } from "@apollo/client"
+import { useLazyQuery } from "@apollo/react-hooks"
 import { useCallback, useState } from "react"
 import Content from "../../../BaseComponents/Content"
 
@@ -11,11 +12,13 @@ import styles from "./styles.module.scss"
 const BreweryList = () => {
 	const [search, setSearch] = useState("")
 	const ListData = useQuery(LIST_QUERY)
-	const SearchQuery = useQuery(SEARCH_QUERY, {
+	const [getResults, { loading, data }] = useLazyQuery(SEARCH_QUERY, {
 		variables: { id: search }
 	})
 
-	console.log(ListData, SearchQuery)
+	const handleSearch = useCallback(() => {
+		getResults()
+	}, [])
 
 	const handleSearchInput = useCallback((e) => {
 		setSearch(e.target.value)
@@ -34,13 +37,15 @@ const BreweryList = () => {
 						placeholder='Find a brewery'
 						onChange={(e) => handleSearchInput(e)}
 					/>
-					<button type='button'>Search</button>
+					<button type='button' onClick={handleSearch}>
+						Search
+					</button>
 					<button type='reset' onClick={() => setSearch("")}>
 						Reset
 					</button>
 				</form>
-				{SearchQuery.data && SearchQuery.data.Results.length > 0 ? (
-					<BreweryListCard data={SearchQuery.data.Results} isFetching={SearchQuery.isFetching} />
+				{!loading && data?.Results.length > 0 ? (
+					<BreweryListCard data={data?.Results} isFetching={loading} />
 				) : (
 					<BreweryListCard data={ListData?.data?.Brewery} isFetching={ListData.isFetching} />
 				)}
