@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import { CaretRight } from "../../../../static/design/vars/icons"
+import { CaretRight } from "../../../../static/design/icons"
 import styles from "./styles.module.scss"
 
 const BreweryList = ({ isFetching, data }) => (

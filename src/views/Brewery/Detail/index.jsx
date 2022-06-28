@@ -1,7 +1,7 @@
 import { useQuery } from "@apollo/client"
 import { useEffect, useState } from "react"
 import { Link, useParams } from "react-router-dom"
-import { CaretLeft } from "../../../static/design/vars/icons"
+import { CaretLeft } from "../../../static/design/icons"
 import FormatPhoneNumber from "../../../utils/helpers/formatPhoneNumber"
 import DETAIL_QUERY from "../../../utils/hooks/Query/Detail"
 import styles from "./styles.module.scss"

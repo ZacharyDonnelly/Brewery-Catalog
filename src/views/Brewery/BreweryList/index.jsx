@@ -1,8 +1,8 @@
 import { useLazyQuery, useQuery } from "@apollo/react-hooks"
 import { useCallback, useEffect, useState } from "react"
 import Content from "../../../BaseComponents/Content"
-import { CaretUpDown } from "../../../static/icons"
-import Filter from "../../../static/icons/Filter"
+import { CaretUpDown } from "../../../static/design/icons"
+import Filter from "../../../static/design/icons/Filter"
 
 import LIST_QUERY from "../../../utils/hooks/Query/List"
 import SEARCH_QUERY from "../../../utils/hooks/Query/Search"
