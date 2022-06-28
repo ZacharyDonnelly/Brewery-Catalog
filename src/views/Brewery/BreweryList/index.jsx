@@ -25,6 +25,7 @@ const BreweryList = () => {
 
 	const handleSearch = useCallback(() => {
 		getResults()
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [])
 
 	const handleSort = useCallback(

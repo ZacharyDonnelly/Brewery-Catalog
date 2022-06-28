@@ -51,14 +51,10 @@
     "chalk": "^5.0.1",
     "classnames": "^2.3.1",
     "concurrently": "^7.2.2",
-    "core-js": "^3.23.2",
     "eslint": "7.5.0",
     "eslint-config-prettier": "^8.5.0",
-    "eslint-config-react": "^1.1.7",
     "eslint-config-react-app": "^7.0.1",
-    "eslint-plugin-flowtype": "^8.0.3",
     "eslint-plugin-import": "^2.26.0",
-    "eslint-plugin-jsx-a11y": "^6.6.0",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react-app": "^6.2.2",
     "eslint-plugin-react-hooks": "^4.7.0-next-955cad9bc-20220623",
@@ -73,7 +69,6 @@
     "rimraf": "^3.0.2",
     "sass": "^1.53.0",
     "scriptlint": "^2.2.0",
-    "style-loader": "^3.3.1",
     "stylelint": "^14.9.1",
     "stylelint-config-prettier": "^9.0.3",
     "stylelint-prettier": "^2.0.0",
@@ -85,11 +80,6 @@
   "hooks": {
     "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
     "pre-commit": "lint-staged"
-  },
-  "peerDependenciesMeta": {
-    "eslint-config-prettier": {
-      "optional": true
-    }
   },
   "repository": {
     "type": "git",
