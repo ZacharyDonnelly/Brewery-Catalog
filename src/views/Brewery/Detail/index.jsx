@@ -1,8 +1,9 @@
 import { useQuery } from "@apollo/client"
 import { useEffect, useState } from "react"
 import { Link, useParams } from "react-router-dom"
-import DETAIL_QUERY from "../../../graphql/Query/Detail"
 import { CaretLeft } from "../../../static/design/vars/icons"
+import FormatPhoneNumber from "../../../utils/helpers/formatPhoneNumber"
+import DETAIL_QUERY from "../../../utils/hooks/Query/Detail"
 import styles from "./styles.module.scss"
 
 const BreweryDetail = () => {
@@ -15,7 +16,7 @@ const BreweryDetail = () => {
 		phone: "",
 		website_url: ""
 	})
-	const { data, loading, error } = useQuery(DETAIL_QUERY, {
+	const { data, loading } = useQuery(DETAIL_QUERY, {
 		variables: { id }
 	})
 
@@ -26,7 +27,7 @@ const BreweryDetail = () => {
 				city: data?.Details?.city,
 				state: data?.Details?.state,
 				country: data?.Details?.country,
-				phone: data?.Details?.phone,
+				phone: FormatPhoneNumber(data?.Details?.phone),
 				website_url: data?.Details?.website_url
 			})
 		}
@@ -41,8 +42,14 @@ const BreweryDetail = () => {
 				<p>City: {details.city}</p>
 				<p>State: {details.state}</p>
 				<p>Country: {details.country}</p>
-				<p>Telephone: {details.phone}</p>
-				<p>{details.website_url && `Website: ${details.website_url}`}</p>
+				{details.phone && <p>`Telephone: ${details.phone}`</p>}
+				<p>
+					{details.website_url && (
+						<>
+							Website: <a href={details.website_url}>{details.website_url}</a>
+						</>
+					)}
+				</p>
 			</div>
 			<button type='button'>
 				<Link to='/breweries'>

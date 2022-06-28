@@ -3,8 +3,8 @@ import { useLazyQuery } from "@apollo/react-hooks"
 import { useCallback, useEffect, useState } from "react"
 import Content from "../../../BaseComponents/Content"
 
-import LIST_QUERY from "../../../graphql/Query/List"
-import SEARCH_QUERY from "../../../graphql/Query/Search"
+import LIST_QUERY from "../../../utils/hooks/Query/List"
+import SEARCH_QUERY from "../../../utils/hooks/Query/Search"
 
 import BreweryListCard from "./BreweryListCard"
 import styles from "./styles.module.scss"
@@ -30,6 +30,10 @@ const BreweryList = () => {
 		} else if (data?.Results && !loading) {
 			const results = data?.Results
 			setBreweries(results)
+		}
+
+		return () => {
+			setBreweries([])
 		}
 
 		console.log(breweries)
