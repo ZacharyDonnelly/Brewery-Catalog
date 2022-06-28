@@ -28,6 +28,11 @@ const BreweryList = () => {
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [])
 
+	const handleReset = useCallback(() => {
+		setSearch("")
+		window.location.reload()
+	}, [])
+
 	const handleSort = useCallback(
 		(dir) => {
 			setBreweries(
@@ -53,6 +58,10 @@ const BreweryList = () => {
 			const _results = cloneDeep(data?.Results)
 			setBreweries(_results)
 		}
+
+		return () => {
+			setBreweries([])
+		}
 	}, [isFetching, breweryList, data, loading])
 
 	return (
@@ -71,7 +80,7 @@ const BreweryList = () => {
 					<button type='button' onClick={handleSearch}>
 						Search
 					</button>
-					<button type='reset' onClick={() => setSearch("")}>
+					<button type='reset' onClick={handleReset}>
 						Reset
 					</button>
 				</form>
