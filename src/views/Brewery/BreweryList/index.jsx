@@ -29,7 +29,7 @@ const BreweryList = () => {
 	const handleSort = useCallback(
 		(dir) => {
 			setBreweries(
-				Array.from(breweryList).sort((a, b) => {
+				Array.from(breweries).sort((a, b) => {
 					if (dir === "desc") {
 						setIsSorting("asc")
 						return a.name.localeCompare(b.name)
@@ -40,7 +40,7 @@ const BreweryList = () => {
 				})
 			)
 		},
-		[breweryList]
+		[breweries]
 	)
 
 	useEffect(() => {
