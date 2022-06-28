@@ -1,8 +1,7 @@
-import { useQuery } from "@apollo/client"
-import { useLazyQuery } from "@apollo/react-hooks"
+import { useLazyQuery, useQuery } from "@apollo/react-hooks"
 import { useCallback, useEffect, useState } from "react"
 import Content from "../../../BaseComponents/Content"
-import { CaretDown, CaretUp } from "../../../static/icons"
+import { CaretUpDown } from "../../../static/icons"
 import Filter from "../../../static/icons/Filter"
 
 import LIST_QUERY from "../../../utils/hooks/Query/List"
@@ -13,10 +12,7 @@ import styles from "./styles.module.scss"
 
 const BreweryList = () => {
 	const [breweries, setBreweries] = useState([])
-	const [isSorting, setIsSorting] = useState({
-		direction: "",
-		inUse: false
-	})
+	const [isSorting, setIsSorting] = useState("desc")
 	const [search, setSearch] = useState("")
 	const ListData = useQuery(LIST_QUERY)
 	const [getResults, { loading, data }] = useLazyQuery(SEARCH_QUERY, {
@@ -32,15 +28,13 @@ const BreweryList = () => {
 
 	const handleSort = useCallback(
 		(dir) => {
-			setIsSorting({
-				direction: dir,
-				inUse: true
-			})
 			setBreweries(
 				Array.from(breweryList).sort((a, b) => {
-					if (dir === "asc") {
+					if (dir === "desc") {
+						setIsSorting("asc")
 						return a.name.localeCompare(b.name)
 					} else {
+						setIsSorting("desc")
 						return b.name.localeCompare(a.name)
 					}
 				})
@@ -50,15 +44,14 @@ const BreweryList = () => {
 	)
 
 	useEffect(() => {
-		if (!isSorting.inUse) {
-			if (breweryList && !isFetching && !data) {
-				setBreweries(breweryList)
-			} else if (data?.Results && !loading) {
-				const results = data?.Results
-				setBreweries(results)
-			}
+		if (breweryList && !isFetching && !data) {
+			const _breweries = [...breweryList]
+			setBreweries(_breweries)
+		} else if (data?.Results && !loading) {
+			const _results = [...data?.Results]
+			setBreweries(_results)
 		}
-	}, [isFetching, breweries, breweryList, data, loading, isSorting])
+	}, [isFetching, breweryList, data, loading])
 
 	return (
 		<Content className={styles.container}>
@@ -82,15 +75,14 @@ const BreweryList = () => {
 				</form>
 				<div className={styles.filters}>
 					<Filter />
-					{!isSorting ? (
-						<button type='button' onClick={() => handleSort("asc")}>
-							Filter by Name <CaretUp />
-						</button>
-					) : (
-						<button type='button' onClick={() => handleSort("desc")}>
-							Filter by Name <CaretDown />
-						</button>
-					)}
+					<button
+						type='button'
+						onClick={() => {
+							isSorting !== "desc" ? handleSort("asc") : handleSort("desc")
+						}}
+					>
+						Filter by Name <CaretUpDown />
+					</button>
 				</div>
 				{!loading && data?.Results.length > 0 ? (
 					<BreweryListCard data={breweries} isFetching={loading} />

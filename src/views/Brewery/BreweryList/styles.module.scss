@@ -46,7 +46,7 @@
 
 	.filters {
 		display: flex;
-		margin: 2rem 0 .5rem;
+		margin: 2rem 0 0.5rem;
 
 		button {
 			@include button-shared;
@@ -54,8 +54,13 @@
 			border: none;
 			margin-left: 2rem;
 
+			.caretDown {
+				height: 40px;
+				width: 40px;
+			}
+
 			svg {
-				margin-left: .5rem
+				margin-left: 0.5rem;
 			}
 
 			&:hover {
