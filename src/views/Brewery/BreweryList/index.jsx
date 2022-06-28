@@ -68,7 +68,7 @@ const BreweryList = () => {
 						placeholder='Find a brewery'
 						onChange={(e) => setSearch(e.target.value)}
 					/>
-					<button type='button' onClick={() => handleSearch("asc")}>
+					<button type='button' onClick={handleSearch}>
 						Search
 					</button>
 					<button type='reset' onClick={() => setSearch("")}>
