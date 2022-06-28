@@ -2,6 +2,8 @@ import { useQuery } from "@apollo/client"
 import { useLazyQuery } from "@apollo/react-hooks"
 import { useCallback, useEffect, useState } from "react"
 import Content from "../../../BaseComponents/Content"
+import { CaretDown, CaretUp } from "../../../static/icons"
+import Filter from "../../../static/icons/Filter"
 
 import LIST_QUERY from "../../../utils/hooks/Query/List"
 import SEARCH_QUERY from "../../../utils/hooks/Query/Search"
@@ -11,6 +13,10 @@ import styles from "./styles.module.scss"
 
 const BreweryList = () => {
 	const [breweries, setBreweries] = useState([])
+	const [isSorting, setIsSorting] = useState({
+		direction: "",
+		inUse: false
+	})
 	const [search, setSearch] = useState("")
 	const ListData = useQuery(LIST_QUERY)
 	const [getResults, { loading, data }] = useLazyQuery(SEARCH_QUERY, {
@@ -24,20 +30,35 @@ const BreweryList = () => {
 		getResults()
 	}, [])
 
+	const handleSort = useCallback(
+		(dir) => {
+			setIsSorting({
+				direction: dir,
+				inUse: true
+			})
+			setBreweries(
+				Array.from(breweryList).sort((a, b) => {
+					if (dir === "asc") {
+						return a.name.localeCompare(b.name)
+					} else {
+						return b.name.localeCompare(a.name)
+					}
+				})
+			)
+		},
+		[breweryList]
+	)
+
 	useEffect(() => {
-		if (breweryList && !isFetching && !data) {
-			setBreweries(breweryList)
-		} else if (data?.Results && !loading) {
-			const results = data?.Results
-			setBreweries(results)
+		if (!isSorting.inUse) {
+			if (breweryList && !isFetching && !data) {
+				setBreweries(breweryList)
+			} else if (data?.Results && !loading) {
+				const results = data?.Results
+				setBreweries(results)
+			}
 		}
-
-		return () => {
-			setBreweries([])
-		}
-
-		console.log(breweries)
-	}, [isFetching, breweries, breweryList, data, loading])
+	}, [isFetching, breweries, breweryList, data, loading, isSorting])
 
 	return (
 		<Content className={styles.container}>
@@ -52,13 +73,25 @@ const BreweryList = () => {
 						placeholder='Find a brewery'
 						onChange={(e) => setSearch(e.target.value)}
 					/>
-					<button type='button' onClick={handleSearch}>
+					<button type='button' onClick={() => handleSearch("asc")}>
 						Search
 					</button>
 					<button type='reset' onClick={() => setSearch("")}>
 						Reset
 					</button>
 				</form>
+				<div className={styles.filters}>
+					<Filter />
+					{!isSorting ? (
+						<button type='button' onClick={() => handleSort("asc")}>
+							Filter by Name <CaretUp />
+						</button>
+					) : (
+						<button type='button' onClick={() => handleSort("desc")}>
+							Filter by Name <CaretDown />
+						</button>
+					)}
+				</div>
 				{!loading && data?.Results.length > 0 ? (
 					<BreweryListCard data={breweries} isFetching={loading} />
 				) : (

@@ -1,90 +1,90 @@
 @import "../.././../vars";
 
 .container {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    align-items: center;
-    justify-content: center;
-    background-image: url('../../../static/DetailBackground.jpeg');
-    background-repeat: no-repeat;
-    background-size: cover;
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+	align-items: center;
+	justify-content: center;
+	background-image: url("../../../static/DetailBackground.jpeg");
+	background-repeat: no-repeat;
+	background-size: cover;
 
-    .detailView {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        background-color: $color-grayLightest;
-        width: 750px;
-        height: 500px;
-        padding: 5rem 3rem;
-        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
-            rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+	.detailView {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		background-color: $color-grayLightest;
+		width: 750px;
+		height: 500px;
+		padding: 5rem 3rem;
+		box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+			rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 
-        header {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 4rem;
+		header {
+			display: flex;
+			justify-content: center;
+			margin-bottom: 4rem;
 
-            h2 {
-                font-size: 2.5rem;
-                line-height: 1.5rem;
-                border-bottom: 1px solid $color-black;
-                padding-bottom: 1rem;
-            }
-        }
+			h2 {
+				font-size: 2.5rem;
+				line-height: 1.5rem;
+				border-bottom: 1px solid $color-black;
+				padding-bottom: 1rem;
+			}
+		}
 
-        p {
-            font-size: 1.5rem;
-            font-weight: 500;
-            line-height: 1.8rem;
-            transform: translateY(-1rem);
-            transition: opacity 0.45s ease, transform 0.5s ease;
-            margin: 1rem 0;
+		p {
+			font-size: 1.5rem;
+			font-weight: 500;
+			line-height: 1.8rem;
+			transform: translateY(-1rem);
+			transition: opacity 0.45s ease, transform 0.5s ease;
+			margin: 1rem 0;
 
-            a:hover {
-                text-decoration: underline;
-                color: $color-accentGreen;
-                cursor: pointer;
-            }
-        }
+			a:hover {
+				text-decoration: underline;
+				color: $color-accentGreen;
+				cursor: pointer;
+			}
+		}
 
-        &:hover {
-            background: $color-accentRedLight;
-            transform: scale(1.03);
+		&:hover {
+			background: $color-accentRedLight;
+			transform: scale(1.03);
 
-            h2,
-            p {
-                color: $color-white;
-                border-bottom-color: $color-white;
-            }
-        }
-    }
+			h2,
+			p {
+				color: $color-white;
+				border-bottom-color: $color-white;
+			}
+		}
+	}
 
-    button {
-        @include button-shared;
-        margin-top: 3rem;
-        border: 1px solid transparent;
-        border-radius: $border-radius;
-        background-color: $color-grayLightest;
-        padding: 1rem;
-        font-size: 2rem;
-        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
-            rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+	button {
+		@include button-shared;
+		margin-top: 3rem;
+		border: 1px solid transparent;
+		border-radius: $border-radius;
+		background-color: $color-grayLightest;
+		padding: 1rem;
+		font-size: 2rem;
+		box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+			rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 
-        a {
-            display: flex;
-            align-items: center;
-        }
+		a {
+			display: flex;
+			align-items: center;
+		}
 
-        &:hover {
-            color: $color-white;
-            border-color: $color-accentRedLight;
-            background-color: $color-accentRedLight;
+		&:hover {
+			color: $color-white;
+			border-color: $color-accentRedLight;
+			background-color: $color-accentRedLight;
 
-            svg {
-                fill: $color-white;
-            }
-        }
-    }
+			svg {
+				fill: $color-white;
+			}
+		}
+	}
 }
