@@ -1,3 +1,4 @@
+import { cloneDeep } from "@apollo/client/utilities"
 import { useLazyQuery, useQuery } from "@apollo/react-hooks"
 import { useCallback, useEffect, useState } from "react"
 import Content from "../../../BaseComponents/Content"
@@ -45,10 +46,10 @@ const BreweryList = () => {
 
 	useEffect(() => {
 		if (breweryList && !isFetching && !data) {
-			const _breweries = [...breweryList]
+			const _breweries = cloneDeep(breweryList)
 			setBreweries(_breweries)
 		} else if (data?.Results && !loading) {
-			const _results = [...data?.Results]
+			const _results = cloneDeep(data?.Results)
 			setBreweries(_results)
 		}
 	}, [isFetching, breweryList, data, loading])
