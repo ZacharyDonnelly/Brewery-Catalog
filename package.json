@@ -7,15 +7,12 @@
   "keywords": [
     "brewery",
     "brewery-catalog",
-    "walmart-labs",
     "config",
     "javascript",
     "stylelint",
     "react",
-    "jest",
     "grapql",
-    "apollo",
-    "react-spring"
+    "apollo"
   ],
   "dependencies": {
     "@apollo/client": "^3.6.9",

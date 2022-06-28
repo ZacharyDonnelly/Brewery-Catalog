@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Brewery Listings",
+  "name": "Brewery catalog application with detail view",
   "icons": [
     {
       "src": "favicon.ico",
@@ -10,6 +10,5 @@
   ],
   "start_url": "./breweries",
   "display": "standalone",
-  "theme_color": "#E0BE65",
-  "background_color": "#E0BE65"
+  "theme_color": "#E0BE65"
 }
