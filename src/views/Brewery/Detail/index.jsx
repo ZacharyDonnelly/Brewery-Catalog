@@ -42,7 +42,7 @@ const BreweryDetail = () => {
 				<p>City: {details.city}</p>
 				<p>State: {details.state}</p>
 				<p>Country: {details.country}</p>
-				{details.phone && <p>`Telephone: ${details.phone}`</p>}
+				{details.phone && <p>Telephone: ${details.phone}</p>}
 				<p>
 					{details.website_url && (
 						<>
