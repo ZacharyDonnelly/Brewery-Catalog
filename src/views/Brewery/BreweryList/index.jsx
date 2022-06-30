@@ -25,11 +25,11 @@ const BreweryList = () => {
 
 	const handleSearch = useCallback(() => {
 		getResults()
-		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [])
 
 	const handleReset = useCallback(() => {
 		setSearch("")
+		setBreweries([])
 		window.location.reload()
 	}, [])
 
