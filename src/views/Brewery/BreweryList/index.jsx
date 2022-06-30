@@ -23,13 +23,14 @@ const BreweryList = () => {
 	const breweryList = ListData?.data?.Brewery
 	const isFetching = ListData?.loading
 
+	const queryLoading = isFetching && loading
+
 	const handleSearch = useCallback(() => {
 		getResults()
 	}, [])
 
 	const handleReset = useCallback(() => {
 		setSearch("")
-		setBreweries([])
 		window.location.reload()
 	}, [])
 
@@ -95,11 +96,7 @@ const BreweryList = () => {
 						Filter by Name <CaretUpDown />
 					</button>
 				</div>
-				{!loading && data?.Results.length > 0 ? (
-					<BreweryListCard data={breweries} isFetching={loading} />
-				) : (
-					<BreweryListCard data={breweries} isFetching={isFetching} />
-				)}
+				<BreweryListCard data={breweries} isFetching={queryLoading} />
 			</div>
 		</Content>
 	)
